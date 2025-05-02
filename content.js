@@ -630,6 +630,14 @@ function fixAudioTrack(settingsButton) {
 }
 
 function closeMenu() {
+  const miniplayer = document.querySelector(".ytp-miniplayer-ui")
+  const isMiniplayer = miniplayer.style['display'] != 'none';
+
+  if(isMiniplayer) {
+    miniplayer.click();
+    return null
+  }
+
   document.dispatchEvent(
     new KeyboardEvent("keydown", {
       key: "Escape",
